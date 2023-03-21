@@ -7,6 +7,10 @@ const app = express();
 // Use the cors middleware
 app.use(cors());
 
+app.use(cors({
+  origin: 'https://stark-8nol.vercel.app/'
+}));
+
 // Connect to the MongoDB database
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
