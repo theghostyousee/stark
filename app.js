@@ -1,46 +1,48 @@
-const updateCounterUrl = "https://stark-8nol.vercel.app/updatecounter";
-const getCounterUrl = "https://stark-8nol.vercel.app/getcounter";
+// const updateCounterUrl = "https://stark-8nol.vercel.app/updatecounter";
+// const getCounterUrl = "https://stark-8nol.vercel.app/getcounter";
 
-// Get the counter and button elements
-const counterElement = document.getElementById("counter");
+// // Get the counter and button elements
+// const counterElement = document.getElementById("counter");
 const buttonElement = document.getElementById("increment-button");
 
-// Function to update the counter element
-const updateCounter = () => {
-  // Disable the button until the API call is complete
-  buttonElement.disabled = true;
+// // Function to update the counter element
+// const updateCounter = () => {
+//   // Disable the button until the API call is complete
+//   buttonElement.disabled = true;
 
-  fetch(updateCounterUrl)
-    .then((response) => response.text())
-    .then((text) => {
-      counterElement.innerText = `Counter: ${text}`;
-    })
-    .finally(() => {
-      // Re-enable the button once the API call is complete
-      buttonElement.disabled = false;
-    });
-};
+//   fetch(updateCounterUrl)
+//     .then((response) => response.text())
+//     .then((text) => {
+//       counterElement.innerText = `Counter: ${text}`;
+//     })
+//     .finally(() => {
+//       // Re-enable the button once the API call is complete
+//       buttonElement.disabled = false;
+//     });
+// };
 
 // Function to get the counter value and display it in the counter element
-const getCounter = () => {
-  fetch(getCounterUrl)
-    .then((response) => response.text())
-    .then((text) => {
-      counterElement.innerText = `Total Entry: ${text}`;
-    })
-    .catch((error) => {
-      console.error(error);
-      counterElement.innerText = "Error retrieving counter";
-    });
-};
+// const getCounter = () => {
+//   fetch(getCounterUrl)
+//     .then((response) => response.text())
+//     .then((text) => {
+//       counterElement.innerText = `Total Entry: ${text}`;
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//       counterElement.innerText = "Error retrieving counter";
+//     });
+// };
 
-// Update the counter element initially, but only if it hasn't been updated yet
-setInterval(getCounter, 1000);
+// // Update the counter element initially, but only if it hasn't been updated yet
+// setInterval(getCounter, 1000);
 
 // Function to tweet the counter value
 const tweetCounter = () => {
-  const counternumber = counterElement.innerText.split(": ")[1];
-  const tweetUrl = `https://twitter.com/intent/tweet?text=I'm the %23${counternumber}th person to apply for @StarkFinance`;
+  // const counternumber = counterElement.innerText.split(": ")[1];
+  const tweetUrl = `https://twitter.com/intent/tweet?text=I%20apply%20for%20%40StarkFinance%20first%20institutional%20grade%20defi%20Yield%20launching%20on%20%40arbitrum%20%E2%9C%A8%0D%0A%0D%0AStark%20will%20shine%20soon%2C%20%E2%9C%A8%20&original_referer=https://clicktotweet.com&related=tweetdripapp`;
+
+  // const tweetUrl = `https://twitter.com/intent/tweet?text=I'm the %23${counternumber}th person to apply for @StarkFinance`;
   window.open(tweetUrl, "_blank");
 };
 
@@ -50,15 +52,10 @@ https://twitter.com/intent/tweet?text=I%27m%20the%20%232th%20person%20to%20apply
 // Add an event listener to the button
 buttonElement.addEventListener("click", (event) => {
   // Prevent the default behavior of the button
-  event.preventDefault();
+  tweetCounter();
 
   // Change the button text to "Sent"
   buttonElement.innerText = "Applied";
   // Call the updateCounter function to send the API request
-  updateCounter();
 
-  setTimeout(() => {
-
-    tweetCounter();
-  }, 500);
 });
