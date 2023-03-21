@@ -12,11 +12,12 @@ app.use(cors({
 }));
 
 // Connect to the MongoDB database
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb+srv://topezmario8:koussi@cluster0.t1tthca.mongodb.net/mydatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 30000,
 });
+
 
 // Define a schema for the collection
 const counterSchema = new mongoose.Schema({
