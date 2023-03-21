@@ -1,5 +1,5 @@
-const updateCounterUrl = "http://localhost:3000/updatecounter";
-const getCounterUrl = "http://localhost:3000/getcounter";
+const updateCounterUrl = "https://stark-8nol.vercel.app/updatecounter";
+const getCounterUrl = "https://stark-8nol.vercel.app/getcounter";
 
 // Get the counter and button elements
 const counterElement = document.getElementById("counter");
