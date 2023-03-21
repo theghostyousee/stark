@@ -40,7 +40,7 @@ const buttonElement = document.getElementById("increment-button");
 // Function to tweet the counter value
 const tweetCounter = () => {
   // const counternumber = counterElement.innerText.split(": ")[1];
-  const tweetUrl = `https://twitter.com/intent/tweet?text=I%20apply%20for%20%40StarkFinance%20first%20institutional%20grade%20defi%20Yield%20launching%20on%20%40arbitrum%20%E2%9C%A8%0D%0A%0D%0AStark%20will%20shine%20soon%2C%20%E2%9C%A8%20&original_referer=https://clicktotweet.com&related=tweetdripapp`;
+  const tweetUrl = `https://twitter.com/intent/tweet?text=I%20apply%20for%20%40stark_finance%20first%20institutional%20grade%20defi%20Yield%20launching%20on%20%40arbitrum%20%E2%9C%A8%0D%0A%0D%0AStark%20will%20shine%20soon%2C%20%E2%9C%A8%20&`;
 
   // const tweetUrl = `https://twitter.com/intent/tweet?text=I'm the %23${counternumber}th person to apply for @StarkFinance`;
   window.open(tweetUrl, "_blank");
